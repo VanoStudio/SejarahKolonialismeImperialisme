@@ -1,15 +1,34 @@
 <template>
     <TresCanvas v-bind="gl" id="canvas" window-size>
-        <SceneSejarah/>
+        <TresPerspectiveCamera
+            :position="[0, 0.5, 1]"
+        />
+
+        <OrbitControls 
+            :target="[0, 0.2, 0]"
+            :enabled="false"
+        />
+
+        <TresGroup>
+            <Suspense>
+                <SceneOpening/>
+            </Suspense>
+
+            <Suspense>
+                <Ocean>
+                    <TresCircleGeometry :args="[10, 8]" />
+                </Ocean>
+            </Suspense>
+        </TresGroup>
+
+        <TresAmbientLight :intensity="2" />
+        <TresDirectionalLight :color="0xffffff" :intensity="1" />
     </TresCanvas>
 </template>
 
 <script setup>
-import { SceneSejarah } from '#components';
-import Sejarah from './Scene/Sejarah.vue';
-
 const gl = {
-    clearColor: 'black',
+    clearColor: 'white',
     antialias: true,
 }
 </script>
