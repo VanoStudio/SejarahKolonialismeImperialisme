@@ -21,9 +21,12 @@
             :position="[0.5, 0.3, 0]"
             :scale="[0.5, 0.5, 0.5]"
         >
-        <!-- <NuxtLink class="dialogue-box01 bg-blue-500 text-white p-2 rounded px-4 py-2" to="/select">
-            Pencet ini
-        </NuxtLink> -->
+        <NuxtLink to="/select">
+            <button class="dialogue-box01 bg-blue-500 text-white p-2 rounded px-4 py-2" s>
+                Pencet ini
+            </button>
+            
+        </NuxtLink>
         
             <!-- <h1 class="dialogue-box-1 bg-gray-100 text-xs p-1 rounded">
                 Halo! Saya Rialdi!

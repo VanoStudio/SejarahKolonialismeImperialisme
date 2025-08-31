@@ -13,5 +13,10 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss()
     ]
+  },
+  vue:{
+    compilerOptions: {
+      isCustomElement: (tag) => ['router-link', 'nuxt-link'].includes(tag)
+  }
   }
 })
