@@ -21,12 +21,9 @@
             :position="[0.5, 0.3, 0]"
             :scale="[0.5, 0.5, 0.5]"
         >
-        <NuxtLink to="/select">
-            <button class="dialogue-box01 bg-blue-500 text-white p-2 rounded px-4 py-2" s>
-                Pencet ini
+            <button @click="pindahPage('select')" class="dialogue-box-1 block bg-blue-500 text-black p-2 rounded px-4 py-2">
+                Pencet ini
             </button>
-            
-        </NuxtLink>
         
             <!-- <h1 class="dialogue-box-1 bg-gray-100 text-xs p-1 rounded">
                 Halo! Saya Rialdi!
@@ -42,6 +39,8 @@
 <script setup>
 import { useGLTF, useAnimations, Html } from '@tresjs/cientos'
 
+const router = useRouter()
+
 const characterBelanda = await useGLTF('/models/character_belanda.glb')
 console.log(characterBelanda)
 
@@ -49,5 +48,9 @@ characterBelanda.scene.scale.set(2, 2, 2)
 
 const characterBelandaAnimation = useAnimations(characterBelanda.animations, characterBelanda.scene)
 characterBelandaAnimation.actions['Armature|mixamo.com|Layer0'].play()
+
+const pindahPage = (param) => {
+    router.push({name: param})
+} 
 
 </script>
