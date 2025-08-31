@@ -14,11 +14,11 @@
                 <SceneOpening/>
             </Suspense>
 
-            <Suspense>
+            <!-- <Suspense>
                 <Ocean>
                     <TresCircleGeometry :args="[10, 8]" />
                 </Ocean>
-            </Suspense>
+            </Suspense> -->
         </TresGroup>
 
         <TresAmbientLight :intensity="2" />
