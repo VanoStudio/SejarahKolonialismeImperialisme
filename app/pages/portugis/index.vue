@@ -1,62 +1,73 @@
+
 <template>
-    <div class="min-h-screen flex items-center justify-center bg-gray-100">
-        <div class="bg-white p-8 rounded-lg shadow-lg max-w-5xl w-full">
-        <!-- Judul -->
-        <h1 class="text-2xl font-bold text-center mb-6">Ekspedisi Portugis</h1>
+    <div class="relative min-h-screen flex items-center justify-center bg-gray-100">
+        <NuxtLink to="/select" class="absolute bg-blue-500 top-[1rem] left-[1rem] p-2 text-white rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-10" viewBox="0 0 24 24"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 19v-8.5a1 1 0 0 0-.4-.8l-7-5.25a1 1 0 0 0-1.2 0l-7 5.25a1 1 0 0 0-.4.8V19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"/></svg>
+        </NuxtLink>
 
-        <!-- Konten 2 kolom -->
-        <div class="grid grid-cols-2 gap-6">
-            <!-- Kotak video -->
-            <div class="flex items-center justify-center">
-            <video
-                controls
-                class="w-full h-64 rounded-lg shadow-md bg-gray-300"
-            >
-                <source src="/videos/Portugis/portugal.mp4" type="video/mp4" />
-                Browser kamu tidak mendukung video.
-            </video>
-            </div>
+        <div ref="mainContent" class="bg-white space-y-10 p-8 rounded-xl shadow-lg max-w-7xl w-full">
+            <!-- Judul -->
+            <h1 ref="title" class="text-4xl font-bold text-center">Ekspedisi Portugis</h1>
 
-            <!-- List materi -->
-            <div>
-            <ol class="list-decimal list-inside space-y-4 text-sm">
-                <li>
-                <span class="font-semibold">1497–1499 – Vasco da Gama</span><br />
-                <span class="text-gray-700">
-                    Rute: Lisbon → Tanjung Harapan → Mozambik → Malindi → Calicut
-                    (India).<br />
-                    Tujuan: cari jalur laut ke India, potong monopoli Arab &
-                    Venesia.
-                </span>
-                </li>
-                <li>
-                <span class="font-semibold">1509 – Diogo Lopes de Sequeira</span
-                ><br />
-                <span class="text-gray-700">
-                    Rute: Goa → Malaka.<br />
-                    Tujuan: jajaki dagang & diplomasi dengan Kesultanan Malaka.
-                </span>
-                </li>
-                <li>
-                <span class="font-semibold">1511 – Afonso de Albuquerque</span
-                ><br />
-                <span class="text-gray-700">
-                    Rute: Goa → Malaka.<br />
-                    Tujuan: kuasai Malaka sebagai pusat dagang & jalur ke Maluku.
-                </span>
-                </li>
-                <li>
-                <span class="font-semibold"
-                    >1512 – António de Abreu & Francisco Serrão</span
-                ><br />
-                <span class="text-gray-700">
-                    Rute: Malaka → Laut Jawa → Banda → Ambon → Ternate.<br />
-                    Tujuan: buka akses langsung ke pusat rempah (pala & cengkih).
-                </span>
-                </li>
-            </ol>
+            <!-- Konten 2 kolom -->
+            <div class="flex justify-center items-start gap-6">
+                <!-- Kotak video -->
+                <div ref="videoBox" class="flex items-center justify-center w-1/2 shadow-lg rounded-xl overflow-clip">
+                    <video
+                        autoPlay
+                        muted
+                        playsInline
+                        class="w-full h-full rounded-lg shadow-md bg-gray-300 aspect-square"
+                    >
+                        <source src="/videos/Portugis/portugal.mp4" type="video/mp4" />
+                        Browser kamu tidak mendukung video.
+                    </video>
+                </div>
+
+                <!-- Deskripsi -->
+                <div ref="descBox" class="text-xl space-y-4 text-gray-800 w-1/2 border border-black/10 shadow-lg rounded-xl self-stretch p-5">
+                    <p>
+                        <span class="font-semibold">1497–1499 – Vasco da Gama</span><br />
+                        Rute: Lisbon → Tanjung Harapan → Mozambik → Malindi → Calicut (India).<br />
+                        Tujuan: cari jalur laut ke India, potong monopoli Arab & Venesia.
+                    </p>
+                    <p>
+                        <span class="font-semibold">1509 – Diogo Lopes de Sequeira</span><br />
+                        Rute: Goa → Malaka.<br />
+                        Tujuan: jajaki dagang & diplomasi dengan Kesultanan Malaka.
+                    </p>
+                    <p>
+                        <span class="font-semibold">1511 – Afonso de Albuquerque</span><br />
+                        Rute: Goa → Malaka.<br />
+                        Tujuan: kuasai Malaka sebagai pusat dagang & jalur ke Maluku.
+                    </p>
+                    <p>
+                        <span class="font-semibold">1512 – António de Abreu & Francisco Serrão</span><br />
+                        Rute: Malaka → Laut Jawa → Banda → Ambon → Ternate.<br />
+                        Tujuan: buka akses langsung ke pusat rempah (pala & cengkih).
+                    </p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import gsap from 'gsap'
+
+const mainContent = ref(null)
+const title = ref(null)
+const videoBox = ref(null)
+const descBox = ref(null)
+
+onMounted(() => {
+    gsap.from([title.value, videoBox.value, descBox.value], {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.2
+    })
+})
+</script>

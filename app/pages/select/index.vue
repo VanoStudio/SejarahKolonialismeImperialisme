@@ -7,11 +7,11 @@
         </h2>
 
         <!-- Grid pilihan -->
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid grid-cols-4 gap-6" ref="gridRef">
             <div
             v-for="(item, index) in topics"
             :key="index"
-            class="flex flex-col items-center cursor-pointer group"
+            class="flex flex-col items-center cursor-pointer group grid-item"
             >
             <!-- kotak dengan gambar -->
             <NuxtLink :to="item.path"
@@ -31,8 +31,11 @@
 </template>
 
 <script setup>
+import gsap from 'gsap'
 import { NuxtLink } from '#components';
+import { ref, onMounted } from 'vue';
 
+const gridRef = ref(null);
 const topics = [
     { name: "Belanda", img: "/images/img-options/belanda.jpg", path: "/belanda" },
     { name: "Spanyol", img: "/images/img-options/spanyol.jpg", path: "/spanyol" },
@@ -42,4 +45,18 @@ const topics = [
     { name: "Tordesillas", img: "/images/img-options/tordesillas.jpeg", path: "/tordesillas" },
     { name: "Saragosa", img: "/images/img-options/saragoza.jpg", path: "/saragoza" },
 ];
+
+
+onMounted(() => {
+  if (gridRef.value) {
+    gsap.from(gridRef.value.querySelectorAll('.grid-item'), {
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: 'power2.out',
+    });
+  }
+});
 </script>
+
