@@ -17,6 +17,7 @@
     "@tresjs/nuxt": "^4.0.0",
     "gsap": "^3.13.0",
     "nuxt": "^4.0.3",
+    "nuxt-swiper": "^2.0.1",
     "tailwindcss": "^4.1.12",
     "three": "^0.179.1"
   },

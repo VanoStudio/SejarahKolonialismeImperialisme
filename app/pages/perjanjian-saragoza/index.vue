@@ -1,6 +1,8 @@
 <template>
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
+    <div class="relative min-h-screen bg-gray-100 flex items-center justify-center p-8">
+      <HomeButton/>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
         <!-- Judul -->
         <h1 class="text-2xl font-bold text-center mb-6">
             Perjanjian Saragosa (22 April 1529)

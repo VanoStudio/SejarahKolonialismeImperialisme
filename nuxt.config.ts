@@ -6,9 +6,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css'
   ],
-  modules: [
-    '@tresjs/nuxt'
-  ],
+  modules: ['@tresjs/nuxt', 'nuxt-swiper'],
   vite: {
     plugins: [
       tailwindcss()

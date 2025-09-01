@@ -1,4 +1,6 @@
 <template>
+  <HomeButton/>
+
   <div class="p-6">
     <h1 class="text-2xl font-bold">Halaman kongsi dagang</h1>
     <p>{{ description }}</p>

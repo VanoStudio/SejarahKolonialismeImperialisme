@@ -41,9 +41,9 @@ const topics = [
     { name: "Spanyol", img: "/images/img-options/spanyol.jpg", path: "/spanyol" },
     { name: "Portugis", img: "/images/img-options/portugis.jpg", path: "/portugis" },
     { name: "Inggris", img: "/images/img-options/inggris.jpg", path: "/inggris" },
-    { name: "Kongsi dagang VOC", img: "/images/img-options/voc-eic.png", path: "/voc-eic" },
-    { name: "Tordesillas", img: "/images/img-options/tordesillas.jpeg", path: "/tordesillas" },
-    { name: "Saragosa", img: "/images/img-options/saragoza.jpg", path: "/saragoza" },
+    { name: "Kongsi dagang VOC", img: "/images/img-options/voc-eic.png", path: "/kongsi-dagang" },
+    { name: "Tordesillas", img: "/images/img-options/tordesillas.jpeg", path: "/perjanjian-tordesillas" },
+    { name: "Saragosa", img: "/images/img-options/saragoza.jpg", path: "/perjanjian-saragoza" },
 ];
 
 
