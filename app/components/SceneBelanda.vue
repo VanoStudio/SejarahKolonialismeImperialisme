@@ -1,11 +1,12 @@
 <template>
     <TresCanvas v-bind="gl" id="canvas" window-size>
         <TresPerspectiveCamera
-            :position="[0, 2, 6]"
+            :position="[-5, 5.5, -7.2]"
+            :far="50"
         />
 
         <OrbitControls 
-            :target="[0, 0, 0]"
+            :target="[-3, 1, -0.5]"
             :enabled="false"
         />
 
@@ -16,7 +17,7 @@
 
             <Suspense>
                 <Ocean>
-                    <TresCircleGeometry :args="[10, 8]" />
+                    <TresCircleGeometry :args="[70, 10]" />
                 </Ocean>
             </Suspense>
         </TresGroup>
