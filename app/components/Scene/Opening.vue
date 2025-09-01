@@ -21,9 +21,18 @@
             :position="[0.5, 0.3, 0]"
             :scale="[0.5, 0.5, 0.5]"
         >
+<<<<<<< Updated upstream
             <button @click="pindahPage('select')" class="dialogue-box-1 block bg-blue-500 text-black p-2 rounded px-4 py-2">
                 Pencet ini
             </button>
+=======
+            <a
+                href="/select"
+                class="bg-blue-500 text-white px-4 py-2 rounded shadow-lg hover:bg-blue-600 transition"
+            >
+                Pencet ini
+            </a>
+>>>>>>> Stashed changes
         
             <!-- <h1 class="dialogue-box-1 bg-gray-100 text-xs p-1 rounded">
                 Halo! Saya Rialdi!
