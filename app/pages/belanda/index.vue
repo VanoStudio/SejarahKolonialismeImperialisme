@@ -18,6 +18,14 @@
                       <span v-html="desc"></span>
                     </li>
                   </ul>
+                  <div class="w-full mt-4">
+                    <img
+                      :src="data[currentId].img"
+                      alt="Ilustrasi"
+                      class="w-full h-48 object-cover rounded-lg border border-gray-300"
+                    />
+                  </div>
+
                 </div>
               </Transition>
               <div class="flex justify-between items-center mb-4">
@@ -62,6 +70,7 @@ const data = [
       '<b>Pelaut/kapal:</b> Jacob van Neck (laksamana), Wybrand van Warwijck (wakil), Jacob van Heemskerck (letnan).',
       '<b>Tujuan awal:</b> mengamankan pembelian besar-besaran rempah (lada, cengkih, pala/mace) dan menjalin aliansi dagang di Jawa & Maluku; ekspedisi ini sukses besar secara komersial.',
     ],
+    img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Map_of_the_Indies_%28Dutch%29.jpg/1280px-Map_of_the_Indies_%28Dutch%29.jpg',
   },
   {
     id: 2,
