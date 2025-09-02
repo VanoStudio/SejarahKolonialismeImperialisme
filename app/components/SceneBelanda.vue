@@ -11,8 +11,8 @@
         />
 
         <TresGroup>
-            <Suspense>
-              <SceneKapalDagang/>
+            <Suspense   Suspense>
+                <SceneKapalDagang/>
             </Suspense>
 
             <Suspense>

@@ -8,7 +8,7 @@
           <swiper-slide>
             <PenjelasanRuteSpanyol 
               title="Ekspedisi Ferdinand Magellan & Juan Sebastián Elcano"
-              desc="Rute: Sevilla (Spanyol, 1519) → Atlantik → Brasil → Selat Magellan (1519–1520) → Pasifik → Filipina (Mactan, Magellan gugur) → Juan Sebastián Elcano melanjutkan ke Tidore (Maluku) → kembali via Tanjung Harapan → Spanyol (1522)."
+              desc="Samudra Atlantik → pantai timur Amerika Selatan → Selat Magellan (ujung selatan Amerika Selatan) → Samudra Pasifik → Filipina → Indonesia ( Maluku )"
               secondary-desc=""
               video="/videos/spanyol.mp4"
             />
@@ -23,7 +23,7 @@
               title=" 1525–1526 – Ekspedisi García Jofré de Loaísa"
               desc="Rute: Spanyol → Selat Magellan → Pasifik → Guam → Mindanao → Tidore (Maluku). Banyak kapal hilang, hanya sedikit sampai Maluku."
               secondary-desc="Penjelasan Rute"
-              video=""
+              video="/videos/spanyol.mp4"
             />
           </swiper-slide>
 
@@ -36,7 +36,7 @@
               title="1542–1543 – Ekspedisi Ruy López de Villalobos"
               desc="Rute: Spanyol (Navidad, Meksiko) → Pasifik → Mindanao (Filipina) → akhirnya sampai ke Gilolo dan Tidore ."
               secondary-desc="Penjelasan Rute"
-              video=""
+              video="/videos/spanyol.mp4"
             />
           </swiper-slide>
 
@@ -49,7 +49,7 @@
               title="1564–1565 – Ekspedisi Miguel López de Legazpi"
               desc="Rute: Meksiko (New Spain) → Pasifik → Cebu → Manila → kontak dengan Maluku."
               secondary-desc="Penjelasan Rute"
-              video=""
+              video="/videos/spanyol.mp4"
             />
           </swiper-slide>
 

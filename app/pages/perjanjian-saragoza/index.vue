@@ -57,9 +57,7 @@
 
             <!-- Kolom kanan: bisa isi gambar / ilustrasi -->
             <div class="flex items-center justify-center">
-            <div class="w-64 h-80 bg-gray-300 rounded flex items-center justify-center">
-                <span class="text-gray-700 font-semibold">Ilustrasi</span>
-            </div>
+                <img src="/images/Saragosa/jabatTangan.png" alt="Ilustrasi Perjanjian Zaragoza" class="w-full max-w-3xl h-auto">
             </div>
         </div>
         </div>

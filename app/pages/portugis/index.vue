@@ -26,24 +26,19 @@
                 <!-- Deskripsi -->
                 <div ref="descBox" class="text-base xl:text-xl space-y-4 text-gray-800 w-1/2 border border-black/10 shadow-lg rounded-xl self-stretch p-5">
                     <p>
+                        <span class="font-semibold">Bartolomeus Dias</span><br />
+                        Rute: Lisbon → Tangjung Harapan.<br />
+                        Tujuan: Untuk menemukan rute perdagangan Baru ke asia melalui Samudera Atlantik
+                    </p>
+                    <p>
                         <span class="font-semibold">1497–1499 – Vasco da Gama</span><br />
                         Rute: Lisbon → Tanjung Harapan → Mozambik → Malindi → Calicut (India).<br />
                         Tujuan: cari jalur laut ke India, potong monopoli Arab & Venesia.
                     </p>
                     <p>
-                        <span class="font-semibold">1509 – Diogo Lopes de Sequeira</span><br />
-                        Rute: Goa → Malaka.<br />
-                        Tujuan: jajaki dagang & diplomasi dengan Kesultanan Malaka.
-                    </p>
-                    <p>
                         <span class="font-semibold">1511 – Afonso de Albuquerque</span><br />
                         Rute: Goa → Malaka.<br />
                         Tujuan: kuasai Malaka sebagai pusat dagang & jalur ke Maluku.
-                    </p>
-                    <p>
-                        <span class="font-semibold">1512 – António de Abreu & Francisco Serrão</span><br />
-                        Rute: Malaka → Laut Jawa → Banda → Ambon → Ternate.<br />
-                        Tujuan: buka akses langsung ke pusat rempah (pala & cengkih).
                     </p>
                 </div>
             </div>

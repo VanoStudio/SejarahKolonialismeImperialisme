@@ -58,8 +58,8 @@
 <script setup>
 // Ganti path gambar ini sesuai lokasi filemu (mis. public/img/)
 const images = {
-    pelaut1: "/img/pelaut-1.png",
-    pelaut2: "/img/pelaut-2.png",
-    kapal: "/img/kapal-victoria.png",
+    pelaut1: "/images/spanyol/ferdinand.jpeg",
+    pelaut2: "/images/spanyol/juan.jpg",
+    kapal: "/images/spanyol/victoria.jpeg",
 };
 </script>

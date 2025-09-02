@@ -41,9 +41,10 @@ const topics = [
     { name: "Spanyol", img: "/images/img-options/spanyol.jpg", path: "/spanyol" },
     { name: "Portugis", img: "/images/img-options/portugis.jpg", path: "/portugis" },
     { name: "Inggris", img: "/images/img-options/inggris.jpg", path: "/inggris" },
-    { name: "Kongsi dagang VOC", img: "/images/img-options/voc-eic.png", path: "/kongsi-dagang" },
+    { name: "Kongsi dagang VOC", img: "/images/img-options/voc-eic.png", path: "/kongsi-dagang/voc-1" },
     { name: "Tordesillas", img: "/images/img-options/tordesillas.jpeg", path: "/perjanjian-tordesillas" },
     { name: "Saragosa", img: "/images/img-options/saragoza.jpg", path: "/perjanjian-saragoza" },
+    { name: "Revolusi Perancis", img: "/images/img-options/perancis.jpg", path: "/rev-prancis" },
 ];
 
 

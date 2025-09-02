@@ -1,4 +1,5 @@
 <template>
+    <home-button />
     <div class="min-h-screen bg-gray-100 flex items-center justify-center p-8">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
             <!-- Judul -->
@@ -38,9 +39,7 @@
 
                 <!-- Kolom kanan (ilustrasi) -->
                 <div class="flex items-center justify-center">
-                    <div class="w-64 h-80 bg-gray-300 rounded flex items-center justify-center shadow-inner">
-                        <span class="text-gray-700 font-semibold">Ilustrasi</span>
-                    </div>
+                    <img src="/images/rev-prancis/images.jpeg" alt="Ilustrasi Revolusi Prancis" class="w-full h-auto max-w-xs rounded-lg shadow-md" />
                 </div>
             </div>
         </div>
