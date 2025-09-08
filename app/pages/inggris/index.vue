@@ -17,7 +17,7 @@
           loop
           class="w-full h-full rounded-lg shadow-md bg-gray-300 aspect-square"
         >
-          <source src="/videos/Inggris/inggris.mp4" type="video/mp4" />
+          <source src="/videos/Inggris/Inggris.mp4" type="video/mp4" />
           Browser kamu tidak mendukung video.
         </video>
         </div>
