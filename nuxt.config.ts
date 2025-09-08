@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     preset: 'cloudflare_pages',
+    cloudflare:{
+      nodeCompat: true,
+      deployConfig: true,
+    }
   },
   devtools: { enabled: true },
   css: [
