@@ -2,6 +2,10 @@
 import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  nitro: {
+    compressPublicAssets: true,
+    preset: 'cloudflare_pages',
+  },
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css'
