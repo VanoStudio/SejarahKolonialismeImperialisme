@@ -22,7 +22,7 @@
                     <img
                       :src="data[currentId].img"
                       alt="Ilustrasi"
-                      class="w-full h-48 object-cover rounded-lg border border-gray-300"
+                      class="w-50 h-70 object-fill rounded-lg border border-gray-300"
                     />
                   </div>
 
@@ -61,6 +61,7 @@ const data = [
       '<b>Pelaut/kapal:</b> Cornelis & Frederik de Houtman; Pieter Dirkszoon Keyser; armada 4 kapal: Amsterdam, Hollandia, Mauritius, Duyfken.',
       '<b>Tujuan awal:</b> membuka akses dagang rempah—terutama lada—langsung di pelabuhan Banten dan mematahkan dominasi Portugis.',
     ],
+    img:'/images/belanda/cornelis_de_houtman.jpg',
   },
   {
     id: 1,
@@ -70,14 +71,7 @@ const data = [
       '<b>Pelaut/kapal:</b> Jacob van Neck (laksamana), Wybrand van Warwijck (wakil), Jacob van Heemskerck (letnan).',
       '<b>Tujuan awal:</b> mengamankan pembelian besar-besaran rempah (lada, cengkih, pala/mace) dan menjalin aliansi dagang di Jawa & Maluku; ekspedisi ini sukses besar secara komersial.',
     ],
-    img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Map_of_the_Indies_%28Dutch%29.jpg/1280px-Map_of_the_Indies_%28Dutch%29.jpg',
-  },
-  {
-    id: 2,
-    title: 'Pelayaran Belanda II (1598-1600)',
-    desc: [
-      'Titik masuk awal Belanda ke Nusantara melalui Selat Sunda ke Banten (bukan Selat Malaka) untuk menghindari kekuatan Portugis di Malaka; info ini konsisten pada laporan pelayaran Houtman.',
-    ],
+    img:'/images/belanda/jacobvanneck.jpeg',
   }
 ]
 
