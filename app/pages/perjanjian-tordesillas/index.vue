@@ -1,6 +1,6 @@
 <template>
     <HomeButton/>
-    <SceneTordesillas/>
+    <SceneVocSenang/>
 
     <main id="smooth-wrapper">
         <div id="smooth-content" class="fixed w-full h-full">
