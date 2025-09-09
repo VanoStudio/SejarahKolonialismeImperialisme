@@ -12,7 +12,7 @@
 
         <TresGroup>
             <Suspense   Suspense>
-                <SceneVocHappy/>
+                <SceneJabatTangan/>
             </Suspense>
 
 

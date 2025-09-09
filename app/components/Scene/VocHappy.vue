@@ -1,20 +1,27 @@
 <template>
-    <TresGroup>
-        <TresObject3D :object="modelOrang.scene" />
-        <!-- <ContactShadows :position-y="0" color="#335" :scale="1" /> -->
+    <TresGroup :position="[0, 0, 0]">
+        <TresGroup :position="[-0.4, 0, 0]">
+            <primitive :object="VocSenang.scene"/>
+        </TresGroup>
     </TresGroup>
 </template>
 
 <script setup>
-import { useGLTF } from '@tresjs/cientos'
+import { useGLTF, useAnimations } from '@tresjs/cientos'
 
 // load model GLTF
-const modelOrang = await useGLTF('/models/voc.glb')
+const VocSenang = await useGLTF('/models/voc.glb')
 
-console.log(modelOrang)
+console.log(VocSenang)
 
 // modifikasi scene
-modelOrang.scene.scale.set(3, 3, 3)
-modelOrang.scene.position.set(0, 0, 0)
-modelOrang.scene.rotation.set(0, 0.2, 0)
+VocSenang.scene.scale.set(0.03, 0.03, 0.03)
+VocSenang.scene.position.set(0, 0, 0.1)
+VocSenang.scene.rotation.set(0, 2, 0)
+
+const vocAnimation = useAnimations(VocSenang.animations, VocSenang.scene)
+vocAnimation.actions['Armature|mixamo.com|Layer0'].play()
+
+
 </script>
+

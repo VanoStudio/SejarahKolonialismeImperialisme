@@ -17,9 +17,7 @@
 
 
         </TresGroup>
-
-        <TresAmbientLight :intensity="2" />
-        <TresDirectionalLight :color="0xffffff" :intensity="1" />
+        
     </TresCanvas>
 </template>
 
