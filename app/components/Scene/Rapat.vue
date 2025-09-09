@@ -1,6 +1,6 @@
 <template>
     <TresGroup>
-        <TresObject3D :object="modelOrang.scene" />
+        <TresObject3D :object="ruangan.scene" />
         <!-- <ContactShadows :position-y="0" color="#335" :scale="1" /> -->
     </TresGroup>
 </template>
@@ -9,12 +9,12 @@
 import { useGLTF } from '@tresjs/cientos'
 
 // load model GLTF
-const modelOrang = await useGLTF('/models/voc.glb')
+const ruangan = await useGLTF('/models/castle.glb')
 
 console.log(modelOrang)
 
 // modifikasi scene
-modelOrang.scene.scale.set(3, 3, 3)
-modelOrang.scene.position.set(0, 0, 0)
-modelOrang.scene.rotation.set(0, 0.2, 0)
+ruangan.scene.scale.set(3, 3, 3)
+ruangan.scene.position.set(0, 0, 0)
+ruangan.scene.rotation.set(0, 0.2, 0)
 </script>

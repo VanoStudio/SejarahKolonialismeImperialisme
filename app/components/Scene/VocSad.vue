@@ -9,7 +9,7 @@
 import { useGLTF } from '@tresjs/cientos'
 
 // load model GLTF
-const modelOrang = await useGLTF('/models/voc.glb')
+const modelOrang = await useGLTF('/models/vocsedih.glb')
 
 console.log(modelOrang)
 
