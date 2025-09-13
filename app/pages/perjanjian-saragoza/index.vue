@@ -1,65 +1,106 @@
 <template>
-    <div class="relative min-h-screen bg-gray-100 flex items-center justify-center p-8">
-      <HomeButton/>
+  <Rapat/>
 
-      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
-        <!-- Judul -->
-        <h1 class="text-2xl font-bold text-center mb-6">
-            Perjanjian Saragosa (22 April 1529)
-        </h1>
+  <HomeButton/>
 
-        <!-- Konten Grid -->
-        <div class="grid grid-cols-2 gap-6">
-            <!-- Kolom kiri: scrollable -->
-            <div class="h-96 overflow-y-auto space-y-4 pr-4">
-            <!-- Latar Belakang -->
-            <div class="bg-gray-100 p-4 rounded">
-                <h2 class="font-semibold mb-2">Latar Belakang:</h2>
-                <ul class="list-disc list-inside text-sm space-y-1">
-                <li>
-                    Spanyol & Portugis bersaing memperebutkan Maluku (rempah) karena pembagian wilayah
-                    Perjanjian Tordesillas (1494) tidak jelas di Asia.
-                </li>
-                <li>
-                    Spanyol datang lewat Filipina, Portugis lewat Malaka–Maluku → terjadi konflik klaim
-                    wilayah.
-                </li>
-                </ul>
+    <main>
+        <div class="fixed w-full h-full">
+        <div class="relative w-full h-full">
+            <div class="flex items-center justify-center w-full h-full">
+            <div class="w-[65%]"></div>
+            <div class="w-[35%] h-full p-5 self-stretch">
+                <div class="relative flex flex-col justify-between h-full w-full bg-white/50 backdrop-blur-2xl rounded-xl p-5">
+                <Transition name="fade-slide" mode="out-in">
+                    <div :key="currentId" class="space-y-4">
+                    <h2 class="font-extrabold text-lg flex-1">{{ data[currentId].title }}</h2>
+                    <ul class="space-y-5">
+                        <li v-for="(desc, idx) in data[currentId].desc" :key="idx">
+                        <span v-html="desc"></span>
+                        </li>
+                    </ul>
+                    </div>
+                </Transition>
+                <div class="flex justify-between items-center mb-4">
+                    <button
+                    class="px-3 py-1 bg-blue-500 text-white rounded disabled:opacity-50"
+                    :disabled="currentId === 0"
+                    @click="prevData"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1m3.66 6.82l5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07a1 1 0 0 0 0 1.64"/></svg></button>
+                    <button
+                    class="px-3 py-1 bg-blue-500 text-white rounded disabled:opacity-50"
+                    :disabled="currentId === data.length - 1"
+                    @click="nextData"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.58 16.89l5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82M16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1"/></svg></button>
+                </div>
+                </div>
             </div>
-
-            <!-- Isi Perjanjian -->
-            <div class="bg-gray-100 p-4 rounded">
-                <h2 class="font-semibold mb-2">Isi Perjanjian:</h2>
-                <ol class="list-decimal list-inside text-sm space-y-1">
-                <li>Maluku → Portugis (hak monopoli rempah).</li>
-                <li>Filipina → Spanyol (pusat kekuatan di Asia Tenggara).</li>
-                <li>
-                    Garis demarkasi baru di Samudra Pasifik, ±1.480 km timur Maluku.
-                </li>
-                <li>
-                    Portugis membayar 350.000 dukat emas ke Spanyol agar meninggalkan Maluku.
-                </li>
-                </ol>
-            </div>
-
-            <!-- Dampak -->
-            <div class="bg-gray-100 p-4 rounded">
-                <h2 class="font-semibold mb-2">Dampak:</h2>
-                <ul class="list-disc list-inside text-sm space-y-1">
-                <li>Portugis berkuasa penuh di Maluku, Spanyol fokus ke Filipina.</li>
-                <li>Nusantara masuk zona Portugis.</li>
-                <li>
-                    Asia Tenggara terbagi tanpa memperhatikan penduduk lokal.
-                </li>
-                </ul>
-            </div>
-            </div>
-
-            <!-- Kolom kanan: bisa isi gambar / ilustrasi -->
-            <div class="flex items-center justify-center">
-                <img src="/images/Saragosa/jabatTangan.png" alt="Ilustrasi Perjanjian Zaragoza" class="w-full max-w-3xl h-auto">
             </div>
         </div>
         </div>
-    </div>
+    </main>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const currentId = ref(0)
+
+const data = [
+  {
+    id: 0,
+    title: 'Perjanjian Saragosa (1529)',
+    desc: [
+      '<b>Latar Belakang:</b>',
+      '<ul>',
+        '<li>Spanyol & Portugis bersaing memperebutkan Maluku (rempah) karena pembagian wilayah Perjanjian Tordesillas (1494) tidak jelas di Asia.</li>',
+        '<li>Spanyol datang lewat Filipina, Portugis lewat Malaka–Maluku → terjadi konflik klaim wilayah.</li>',
+      '</ul>',
+      '<b>Isi Perjanjian:</b>',
+      '<ul>',
+        '<li>Maluku → Portugis (hak monopoli rempah).</li>',
+        '<li>Filipina → Spanyol (pusat kekuatan di Asia Tenggara).</li>',
+        '<li>Garis demarkasi baru di Samudra Pasifik, ±1.480 km timur Maluku.</li>',
+        '<li>Portugis membayar 350.000 dukat emas ke Spanyol agar meninggalkan Maluku.</li>',
+      '</ul>',
+    ],
+    img: null
+  },
+  {
+    id: 1,
+    title: 'Dampak Perjanjian Saragosa',
+    desc: [
+      '<ul>',
+        '<li>Portugis berkuasa penuh di Maluku, Spanyol fokus ke Filipina.</li>',
+        '<li>Nusantara masuk zona Portugis.</li>',
+        '<li>Asia Tenggara terbagi tanpa memperhatikan penduduk lokal.</li>',
+      '</ul>',
+    ],
+    img: null
+  }
+]
+
+function prevData() {
+  if (currentId.value > 0) currentId.value--
+}
+
+function nextData() {
+  if (currentId.value < data.length - 1) currentId.value++
+}
+</script>
+
+
+<style>
+</style>
+<style>
+    .fade-slide-enter-active, .fade-slide-leave-active {
+    transition: opacity 0.4s, transform 0.4s;
+    }
+    .fade-slide-enter-from, .fade-slide-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    .fade-slide-leave-from, .fade-slide-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+</style>

@@ -12,7 +12,7 @@
 
         <TresGroup>
             <Suspense   Suspense>
-                <SceneVocHappy :current-id="currentId"/>
+                <ScenePerang/>
             </Suspense>
 
 
@@ -27,13 +27,6 @@
 </template>
 
 <script setup>
-const props = defineProps({
-    currentId: {
-        type: Number,
-        default: 0
-    }
-})
-
 const gl = {
     clearColor: 'white',
     antialias: true,

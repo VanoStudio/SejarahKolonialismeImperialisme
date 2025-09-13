@@ -17,14 +17,6 @@
                       <span v-html="desc"></span>
                     </li>
                   </ul>
-                  <div class="w-full mt-4">
-                    <img
-                      :src="data[currentId].img"
-                      alt="Ilustrasi"
-                      class="w-50 h-70 object-fill rounded-lg border border-gray-300"
-                    />
-                  </div>
-
                 </div>
               </Transition>
               <div class="flex justify-between items-center mb-4">
@@ -54,25 +46,41 @@ const currentId = ref(0)
 const data = [
   {
     id: 0,
-    title: 'Pelayaran I Belanda (1595-1597)',
+    title: 'Perjanjian Tordesillas (1494)',
     desc: [
-      '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
-      '<b>Pelaut/kapal:</b> Cornelis & Frederik de Houtman; Pieter Dirkszoon Keyser; armada 4 kapal: Amsterdam, Hollandia, Mauritius, Duyfken.',
-      '<b>Tujuan awal:</b> membuka akses dagang rempah—terutama lada—langsung di pelabuhan Banten dan mematahkan dominasi Portugis.',
+      '<b>Latar Belakang:</b>',
+      '<ul>',
+        '<li>Spanyol & Portugis bersaing dalam pelayaran samudra.</li>',
+        '<li>Penemuan benua Amerika (1492) oleh Columbus menimbulkan sengketa wilayah.</li>',
+        '<li>Paus Alexander VI memediasi untuk mencegah konflik.</li>',
+      '</ul>',
+      '<b>Isi Perjanjian:</b>',
+      '<ul>',
+        '<li>Dunia dibagi dengan garis demarkasi vertikal di Samudra Atlantik (370 legua barat Kepulauan Tanjung Verde).</li>',
+        '<li>Timur garis → Portugis.</li>',
+        '<li>Barat garis → Spanyol.</li>',
+      '</ul>',
     ],
-    img:'/images/belanda/cornelis_de_houtman.jpg',
   },
   {
     id: 1,
-    title: 'Pelayaran Belanda II (1598-1600)',
+    title: 'Pembagian Wilayah & Dampak Perjanjian Tordesillas',
     desc: [
-      '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
-      '<b>Pelaut/kapal:</b> Jacob van Neck (laksamana), Wybrand van Warwijck (wakil), Jacob van Heemskerck (letnan).',
-      '<b>Tujuan awal:</b> mengamankan pembelian besar-besaran rempah (lada, cengkih, pala/mace) dan menjalin aliansi dagang di Jawa & Maluku; ekspedisi ini sukses besar secara komersial.',
+      '<b>Pembagian Wilayah:</b>',
+      '<ul>',
+        '<li>Portugis: Afrika, India, Asia (termasuk Malaka & Maluku), Brasil (karena berada di timur garis).</li>',
+        '<li>Spanyol: Hampir seluruh Amerika (kecuali Brasil).</li>',
+      '</ul>',
+      '<b>Dampak:</b>',
+      '<ul>',
+        '<li>Portugis berkembang di Asia sebagai kekuatan maritim.</li>',
+        '<li>Spanyol menguasai Amerika & kemudian Filipina.</li>',
+        '<li>Menjadi awal kolonialisme global bangsa Eropa.</li>',
+      '</ul>',
     ],
-    img:'/images/belanda/jacobvanneck.jpeg',
   }
 ]
+
 
 function prevData() {
   if (currentId.value > 0) currentId.value--

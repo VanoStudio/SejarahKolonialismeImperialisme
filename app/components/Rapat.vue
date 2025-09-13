@@ -1,18 +1,20 @@
 <template>
     <TresCanvas v-bind="gl" id="canvas" window-size>
         <TresPerspectiveCamera
-            :position="[0, 0, 0]"
+            :position="[0.5, 0, 0]"
+            :rotation="[0, 0, 0]"
             :far="50"
         />
 
         <OrbitControls 
             :target="[-3, 1, -0.5]"
             :enabled="false"
+            :enableRotate ="true"
         />
 
         <TresGroup>
             <Suspense   Suspense>
-                <SceneVocHappy :current-id="currentId"/>
+                <SceneRuangDiskusi/>
             </Suspense>
 
 
@@ -27,15 +29,10 @@
 </template>
 
 <script setup>
-const props = defineProps({
-    currentId: {
-        type: Number,
-        default: 0
-    }
-})
+import RuangDiskusi from './Scene/RuangDiskusi.vue'
 
 const gl = {
-    clearColor: 'white',
+    clearColor: 'black',
     antialias: true,
 }
 </script>

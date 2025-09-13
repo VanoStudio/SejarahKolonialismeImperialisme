@@ -1,5 +1,5 @@
 <template>
-  <SceneVocSenang/>
+  <SceneVocSenang :current-id="currentId"/>
   <HomeButton/>
 
     <main>
@@ -54,25 +54,46 @@ const currentId = ref(0)
 const data = [
   {
     id: 0,
-    title: 'Pelayaran I Belanda (1595-1597)',
+    title: 'VOC (Vereenigde Oostindische Compagnie)',
     desc: [
-      '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
-      '<b>Pelaut/kapal:</b> Cornelis & Frederik de Houtman; Pieter Dirkszoon Keyser; armada 4 kapal: Amsterdam, Hollandia, Mauritius, Duyfken.',
-      '<b>Tujuan awal:</b> membuka akses dagang rempah—terutama lada—langsung di pelabuhan Banten dan mematahkan dominasi Portugis.',
+      '<b>Didirikan:</b> 20 Maret 1602, atas usulan Johan van Oldenbarnevelt.',
+      '<b>Tujuan:</b> Menyatukan perusahaan dagang Belanda agar tidak saling bersaing.',
+      '<b>Hak Oktroi:</b> VOC berperan seperti negara – monopoli dagang Asia, mencetak uang, membentuk angkatan perang, membangun benteng, membuat perjanjian, hingga mengatur hukum.',
+      '<b>Pusat:</b> Batavia (Jakarta).',
+      '<b>Masa aktif:</b> 1602 – 31 Desember 1799.'
     ],
-    img:'/images/belanda/cornelis_de_houtman.jpg',
+    img: '/images/belanda/michiel.jpg',
   },
   {
     id: 1,
-    title: 'Pelayaran Belanda II (1598-1600)',
+    title: 'Kelemahan & Kejatuhan VOC',
     desc: [
-      '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
-      '<b>Pelaut/kapal:</b> Jacob van Neck (laksamana), Wybrand van Warwijck (wakil), Jacob van Heemskerck (letnan).',
-      '<b>Tujuan awal:</b> mengamankan pembelian besar-besaran rempah (lada, cengkih, pala/mace) dan menjalin aliansi dagang di Jawa & Maluku; ekspedisi ini sukses besar secara komersial.',
+      '<b>Internal:</b>',
+      '<ul>',
+        '<li>Korupsi besar-besaran (dijuluki Vergaan Onder Corruptie).</li>',
+        '<li>Biaya tinggi: gaji pegawai, benteng, armada.</li>',
+        '<li>Perang terus-menerus: Mataram, Gowa-Tallo, Banten.</li>',
+        '<li>Manajemen buruk: Heeren Zeventien gagal mengontrol.</li>',
+      '</ul>',
+      '<b>Eksternal:</b>',
+      '<ol>',
+        '<li>Persaingan dagang: kalah dari Inggris (EIC) & Prancis.</li>',
+        '<li>Politik Belanda berubah: Republik Batavia (1795) anti-monopoli.</li>',
+        '<li>Perlawanan rakyat Nusantara: makin luas, menguras biaya & melemahkan VOC.</li>',
+      '</ol>'
     ],
-    img:'/images/belanda/jacobvanneck.jpeg',
+    img:null
+  },
+  {
+    id: 2,
+    title: 'Title 3',
+    desc: [
+      'Description for title 3'
+    ]
   }
 ]
+
+
 
 function prevData() {
   if (currentId.value > 0) currentId.value--

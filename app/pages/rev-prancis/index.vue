@@ -1,50 +1,90 @@
 <template>
-    <home-button />
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl">
-            <!-- Judul -->
-            <h1 class="text-2xl font-bold text-center mb-6">
-                Revolusi Prancis
-            </h1>
+    <War/>
+    <HomeButton/>
 
-            <!-- Grid -->
-            <div class="grid grid-cols-2 gap-6">
-                <!-- Kolom kiri (scrollable) -->
-                <div class="h-96 overflow-y-auto space-y-4 pr-4">
-                    <!-- Latar Belakang -->
-                    <div class="bg-gray-50 p-4 rounded shadow-sm border-l-4 border-blue-400">
-                        <h2 class="font-semibold mb-2 text-gray-800">Penyebab Utama:</h2>
-                        <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                            <li>Krisis Ekonomi: Utang besar akibat perang, pajak berat, gagal panen → rakyat kelaparan.</li>
-                            <li>Ketidakadilan Sosial: Golongan I & II bebas pajak, Golongan III menanggung beban tanpa hak politik.</li>
-                            <li>Pengaruh Pencerahan: Voltaire, Rousseau, Montesquieu mendorong kebebasan, persamaan, demokrasi.</li>
-                            <li>Pemerintahan Absolut: Louis XVI boros, gagal atasi krisis; kemewahan Marie Antoinette menambah kebencian.</li>
-                            <li>Inspirasi Revolusi Amerika: Keberhasilan melawan Inggris memicu semangat keadilan & kebebasan.</li>
-                        </ul>
+        <main>
+        <div class="fixed w-full h-full">
+        <div class="relative w-full h-full">
+            <div class="flex items-center justify-center w-full h-full">
+            <div class="w-[65%]"></div>
+            <div class="w-[35%] h-full p-5 self-stretch">
+                <div class="relative flex flex-col justify-between h-full w-full bg-white/50 backdrop-blur-2xl rounded-xl p-5">
+                <Transition name="fade-slide" mode="out-in">
+                    <div :key="currentId" class="space-y-4">
+                    <h2 class="font-extrabold text-lg flex-1">{{ data[currentId].title }}</h2>
+                    <ul class="space-y-5">
+                        <li v-for="(desc, idx) in data[currentId].desc" :key="idx">
+                        <span v-html="desc"></span>
+                        </li>
+                    </ul>
                     </div>
-
-                    <!-- Isi Perjanjian -->
-                    <div class="bg-gray-50 p-4 rounded shadow-sm border-l-4 border-green-400">
-                        <h2 class="font-semibold mb-2 text-gray-800">Akibat:</h2>
-                        <ul class="list-disc list-inside text-sm space-y-1 text-gray-700">
-                            <li>Politik: Monarki absolut runtuh → lahir republik & demokrasi; konstitusi, parlemen, nasionalisme berkembang.</li>
-                            <li>Sosial: Feodalisme dihapus, semua setara di depan hukum; kesadaran hak asasi meningkat.</li>
-                            <li>Ekonomi: Pajak adil, tanah bangsawan & gereja dibagi; kelas borjuis tumbuh.</li>
-                            <li>Global: Jadi inspirasi revolusi di Eropa, Amerika Latin, Asia; memicu gerakan kemerdekaan.</li>
-                        </ul>
-                    </div>
-
-                    
+                </Transition>
+                <div class="flex justify-between items-center mb-4">
+                    <button
+                    class="px-3 py-1 bg-blue-500 text-white rounded disabled:opacity-50"
+                    :disabled="currentId === 0"
+                    @click="prevData"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1m3.66 6.82l5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07a1 1 0 0 0 0 1.64"/></svg></button>
+                    <button
+                    class="px-3 py-1 bg-blue-500 text-white rounded disabled:opacity-50"
+                    :disabled="currentId === data.length - 1"
+                    @click="nextData"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.58 16.89l5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82M16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1"/></svg></button>
                 </div>
-
-                <!-- Kolom kanan (ilustrasi) -->
-                <div class="flex items-center justify-center">
-                    <img src="/images/rev-prancis/images.jpeg" alt="Ilustrasi Revolusi Prancis" class="w-full h-auto max-w-xs rounded-lg shadow-md" />
                 </div>
             </div>
+            </div>
         </div>
-    </div>
+        </div>
+    </main>
 </template>
 
+<script setup>
+    import { ref } from 'vue'
+
+    const currentId = ref(0)
+    const data = [
+    {
+        id: 0,
+        title: 'Pelayaran I Belanda (1595-1597)',
+        desc: [
+        '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
+        '<b>Pelaut/kapal:</b> Cornelis & Frederik de Houtman; Pieter Dirkszoon Keyser; armada 4 kapal: Amsterdam, Hollandia, Mauritius, Duyfken.',
+        '<b>Tujuan awal:</b> membuka akses dagang rempah—terutama lada—langsung di pelabuhan Banten dan mematahkan dominasi Portugis.',
+        ]
+    },
+    {
+        id: 1,
+        title: 'Pelayaran Belanda II (1598-1600)',
+        desc: [
+        '<b>Rute:</b> Amsterdam → menyusuri Pantai Barat Afrika (Kep. Canaria/Ilha de Maio) → Tanjung Harapan (Cape of Good Hope) → Madagaskar (berlabuh lama) → Samudra Hindia → Selat Sunda (menghindari Selat Malaka yang dikuasai Portugis) → Banten (Bantam), Jawa.',
+        '<b>Pelaut/kapal:</b> Jacob van Neck (laksamana), Wybrand van Warwijck (wakil), Jacob van Heemskerck (letnan).',
+        '<b>Tujuan awal:</b> mengamankan pembelian besar-besaran rempah (lada, cengkih, pala/mace) dan menjalin aliansi dagang di Jawa & Maluku; ekspedisi ini sukses besar secara komersial.',
+        ]
+    }
+    ]
+
+    function prevData() {
+    if (currentId.value > 0) currentId.value--
+    }
+
+    function nextData() {
+    if (currentId.value < data.length - 1) currentId.value++
+    }
+
+</script>
+
+
 <style>
+    .fade-slide-enter-active, .fade-slide-leave-active {
+    transition: opacity 0.4s, transform 0.4s;
+    }
+    .fade-slide-enter-from, .fade-slide-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    .fade-slide-leave-from, .fade-slide-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+    }
 </style>
